@@ -452,6 +452,7 @@ def runGame(p1InitialPiece, p2InitialPiece, p1List, p2List, p1GrandMaster, p2Gra
                     p1InstantDrop = False
                 elif (event.key == K_UP):
                     p2InstantDrop = False
+                    
             if time.time() - p1WaitTime <= WAITRATE:
                 if event.type == KEYDOWN:
                     #For the freeze at the top; sets up the horizontal variables ahead of time
@@ -554,7 +555,7 @@ def runGame(p1InitialPiece, p2InitialPiece, p1List, p2List, p1GrandMaster, p2Gra
                         if not isTruePosition(p2Board, p2FallingPiece):
                             p2FallingPiece["rotation"] = (p2FallingPiece["rotation"] - 1) % len(PIECES[p2FallingPiece["shape"]])
                     #Same thing but CCW
-                    elif (K_PERIOD):
+                    elif (event.key == K_PERIOD):
                         p2FallingPiece["rotation"] = (p2FallingPiece["rotation"] - 1) % len(PIECES[p2FallingPiece["shape"]])
                         if not isTruePosition(p2Board, p2FallingPiece):
                             if isTruePosition(p2Board, p2FallingPiece, adjX=1):
